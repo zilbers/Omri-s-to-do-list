@@ -26,10 +26,19 @@ const addNewTask = function () {
 const sortItems = function () {
   let sortItems = document.querySelectorAll(".sort");
   let sortItemsArray = Array.prototype.slice.call(sortItems);
+  let viewList = document.querySelector("#view");
+  viewList.innerHTML = "";
   sortItemsArray.sort((a, b) => a.classList.value[0] - b.classList.value[0]);
+  for (let item of sortItemsArray) {
+    viewList.appendChild(item);
+  }
   console.log(sortItemsArray);
 };
 
+/** Prints item to view section
+ * @viewList The view section
+ * @param {*} item object which contains all the relevant data on the task
+ */
 function printItems(item) {
   let priority = document.querySelector("#prioritySelector");
   let itemContainer = document.createElement("div");
@@ -69,4 +78,6 @@ function counter(tasksLeft) {
 
 let counterNum = 1;
 let sendButton = document.querySelector("#addButton");
+let sortButton = document.querySelector("#sortButton");
 sendButton.addEventListener("click", addNewTask);
+sortButton.addEventListener("click", sortItems);
