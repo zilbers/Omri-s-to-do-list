@@ -1,4 +1,4 @@
-const addItem = function (event) {
+const addItem = function () {
   let text = document.querySelector("#textInput");
   if (text.value == "") return;
   let priority = document.querySelector("#prioritySelector");
@@ -19,6 +19,7 @@ const addItem = function (event) {
   viewList.appendChild(itemContainer);
   text.value = "";
   priority.value = "1";
+  counter(counterNum ++);
 };
 
 function timeAndDate() {
@@ -30,5 +31,15 @@ function timeAndDate() {
   return `${date} ${time}`;
 }
 
+function counter(tasksLeft){
+    let counterElem = document.querySelector('#displayLeft');
+    counterElem.innerHTML = `${tasksLeft} TODO's left! `;
+}
+
+const sortItems = function (){
+    let taskLeft = document.querySelector('#displayLeft');
+}
+
+let counterNum = 1;
 let sendButton = document.querySelector("#addButton");
 sendButton.addEventListener("click", addItem);
