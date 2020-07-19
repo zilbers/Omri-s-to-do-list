@@ -5,30 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Omri's to-do list</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
   </head>
   <body>
-    <section id="opening">
-      <h1 class ="header">
-        The perfect to-do list
-      </h1>
-      <p>
-        organize your day with this simple yet effective to-do list!
-      </p>
+    <section id="opening" class="header">
+      <div class="main">
+        <h1>
+          The perfect to-do list
+        </h1>
+        <p>
+          organize your day with this simple yet effective to-do list!
+        </p>
+      </div>
     </section>
     <section id="control">
-      <input type="text" id="textInput" />
-      <select name="prioritySelector" id="prioritySelector">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-      <button id="addButton">Add</button>
-      <div>
+      <div class="header">
+        <input type="text" id="textInput" />
+        <select name="prioritySelector" id="prioritySelector">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <button id="addButton" class="button">Add</button>
+        <button id="sortButton" class="button">Sort</button>
+      </div>
+      <div class="counters">
         <span id="counter">0</span>
         <span>TODO's left!</span>
-        <button id="sortButton">Sort</button>
       </div>
     </section>
     <section id="view"></section>

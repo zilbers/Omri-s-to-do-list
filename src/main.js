@@ -16,7 +16,8 @@ const addNewTask = function () {
   printItems(item);
   text.value = "";
   priority.value = "1";
-  counter(counterNum++);
+  counterNum++;
+  counter(counterNum);
 };
 
 /** Sorts the tasks that already have been entered
@@ -38,9 +39,16 @@ const sortItems = function () {
 const taskDone = function (event) {
   let itemToStrike = event.target.closest(".sort");
   if (!itemToStrike) return;
-  itemToStrike.classList[2] == "strike"
-    ? (itemToStrike.classList.remove("strike"))
-    : itemToStrike.classList.add("strike");
+  if (itemToStrike.classList[2] == "strike") {
+    itemToStrike.classList.remove("strike");
+    counterNum++;
+    counter(counterNum);
+  } else {
+    itemToStrike.classList.add("strike");
+    counterNum--;
+    counter(counterNum);
+  }
+  return counterNum;
   console.log(itemToStrike.classList);
 };
 
@@ -55,6 +63,7 @@ function printItems(item) {
   for (const property in item) {
     let itemDiv = document.createElement("div");
     itemDiv.classList = property;
+    itemDiv.classList.add("rail");
     itemDiv.innerHTML = item[property];
     itemContainer.appendChild(itemDiv);
     console.log(`${property}: ${item[property]}`);
@@ -85,7 +94,7 @@ function counter(tasksLeft) {
   counterElem.innerHTML = tasksLeft;
 }
 
-let counterNum = 1;
+let counterNum = 0;
 let sendButton = document.querySelector("#addButton");
 let sortButton = document.querySelector("#sortButton");
 sendButton.addEventListener("click", addNewTask);
