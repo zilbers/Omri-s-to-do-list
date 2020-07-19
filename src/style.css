@@ -1,5 +1,61 @@
+* {
+  box-sizing: border-box;
+}
+
 .strike {
-    background: #888;
-    color: #fff;
-    text-decoration: line-through;
+  background: #888;
+  color: #fff;
+  text-decoration: line-through;
+}
+
+.header {
+  background-color: #f44336;
+  padding: 30px 40px;
+  color: white;
+  text-align: center;
+}
+
+.header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+input {
+  margin: 0;
+  border-radius: 0;
+  width: 75%;
+  padding: 10px;
+  float: left;
+  font-size: 16px;
+}
+
+#addButton {
+  padding: 10px;
+  width: 18%;
+  background: #d9d9d9;
+  color: #555;
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 0;
+}
+
+#prioritySelector {
+  padding: 10px;
+  width: 7%;
+  background: #d9d9d9;
+  color: #555;
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 0;
+}
+
+#addButton:hover {
+  background-color: #bbb;
 }
