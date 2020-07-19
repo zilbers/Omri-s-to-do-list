@@ -35,6 +35,15 @@ const sortItems = function () {
   console.log(sortItemsArray);
 };
 
+const taskDone = function (event) {
+  let itemToStrike = event.target.closest(".sort");
+  if (!itemToStrike) return;
+  itemToStrike.classList[2] == "strike"
+    ? (itemToStrike.classList.remove("strike"))
+    : itemToStrike.classList.add("strike");
+  console.log(itemToStrike.classList);
+};
+
 /** Prints item to view section
  * @viewList The view section
  * @param {*} item object which contains all the relevant data on the task
@@ -81,3 +90,4 @@ let sendButton = document.querySelector("#addButton");
 let sortButton = document.querySelector("#sortButton");
 sendButton.addEventListener("click", addNewTask);
 sortButton.addEventListener("click", sortItems);
+document.addEventListener("click", taskDone);
