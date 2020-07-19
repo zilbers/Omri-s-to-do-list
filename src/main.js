@@ -1,16 +1,23 @@
 const addItem = function (event) {
   let text = document.querySelector("#textInput");
-  if (text.value == '') return;
+  if (text.value == "") return;
   let priority = document.querySelector("#prioritySelector");
-  let listItem = document.createElement("li");
-  let viewList = document.querySelector("#viewList");
+  let itemContainer = document.createElement("div");
+  let viewList = document.querySelector("#view");
   let item = {
     todoText: text.value,
     todoCreatedAt: timeAndDate(),
     priority: priority.value,
   };
-  listItem.innerHTML = `${item.priority} ${item.todoCreatedAt} ${item.todoText}`;
-  viewList.appendChild(listItem);
+  for (const property in item) {
+    let itemDiv = document.createElement("div");
+    itemDiv.classList = property;
+    itemDiv.innerHTML = item[property];
+    itemContainer.appendChild(itemDiv);
+    console.log(`${property}: ${item[property]}`);
+  }
+  //   itemContainer.innerHTML = `${item.priority} ${item.todoCreatedAt} ${item.todoText}`;
+  viewList.appendChild(itemContainer);
   text.value = "";
   priority.value = "1";
 };
