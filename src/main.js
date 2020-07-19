@@ -7,7 +7,7 @@ const addItem = function (event) {
   let item = {
     todoText: text.value,
     todoCreatedAt: timeAndDate(),
-    priority: priority.value,
+    todoPriority: priority.value,
   };
   for (const property in item) {
     let itemDiv = document.createElement("div");
@@ -16,7 +16,6 @@ const addItem = function (event) {
     itemContainer.appendChild(itemDiv);
     console.log(`${property}: ${item[property]}`);
   }
-  //   itemContainer.innerHTML = `${item.priority} ${item.todoCreatedAt} ${item.todoText}`;
   viewList.appendChild(itemContainer);
   text.value = "";
   priority.value = "1";
