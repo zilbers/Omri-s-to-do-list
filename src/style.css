@@ -8,6 +8,7 @@ body {
     rgba(0, 0, 0, 0),
     rgba(69, 86, 125, 1)
   );
+  font-size: 1.25em;
 }
 
 .strike {
@@ -16,10 +17,14 @@ body {
   text-decoration: line-through;
 }
 
+h1 {
+  font-size: 1.5em;
+}
 .header {
   padding: 30px 40px;
   color: white;
   text-align: center;
+  font-size: 1.1em;
 }
 
 .header:after {
@@ -81,6 +86,7 @@ input {
 
 .rail {
   display: inline;
+  cursor: pointer;
 }
 
 .todoText {
@@ -101,5 +107,5 @@ input {
   margin: auto;
   width: 50%;
   padding: 10px;
-  background: linear-gradient(45deg, rgba(8, 11, 212, 0.781), rgb(2, 128, 231));
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
 }
