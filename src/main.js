@@ -130,7 +130,7 @@ const setData = function () {
   console.log(tasks);
   for (let item of tasks) {
     let priority = item.classList[0];
-    tasksString += `<div class="sort ${priority}">${item.innerHTML}</div>`;
+    tasksString += `<div class="${priority} sort">${item.innerHTML}</div>`;
   }
   console.log(tasksString);
   localStorage.setItem("tasks", tasksString);
@@ -157,11 +157,11 @@ let sortButton = document.querySelector("#sortButton");
 let deleteButton = document.querySelector("#deleteButton");
 let saveButton = document.querySelector("#saveButton");
 let openNavbarArrow = document.querySelector("#openNavbarArrow");
-let closeNavabarArrow = document.querySelector("#closeNavbarArrow");
+let closeNavbarArrow = document.querySelector("#closeNavbarArrow");
 sendButton.addEventListener("click", addNewTask);
 sortButton.addEventListener("click", sortItems);
 deleteButton.addEventListener("click", deleteTasks);
 saveButton.addEventListener("click", setData);
 openNavbarArrow.addEventListener("click", openCloseNavbar);
-closeNavabarArrow.addEventListener("click", openCloseNavbar);
+closeNavbarArrow.addEventListener("click", openCloseNavbar);
 document.addEventListener("click", taskDone);
