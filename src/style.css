@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
 }
 
 *:focus {
@@ -88,11 +88,11 @@ input {
 }
 
 #prioritySelector:hover {
-  background: rgba(255, 255, 255,0.7);
+  background: rgba(255, 255, 255, 0.7);
 }
 
 button:hover {
-  background-color: rgba(255, 255, 255,0.7);
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 .main {
@@ -137,7 +137,7 @@ button:hover {
 }
 
 .sort:hover {
-  background-color: rgba(255, 255, 255,0.5);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 ::-webkit-input-placeholder {
@@ -191,11 +191,12 @@ button:hover {
   padding: 3px;
 }
 .arrow:hover {
-    background-color: rgba(255, 255, 255,0.7);
-  }
-  
+  background-color: rgba(255, 255, 255, 0.7);
+}
 
 .down {
+  position: relative;
+  right: 25%;
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
 }
