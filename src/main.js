@@ -115,30 +115,44 @@ function counter(tasksLeft) {
   counterElem.innerHTML = tasksLeft;
 }
 
-function setData() {
+/** Saves data to local storage for next use
+ * takes an array of all the input tasks, saves it in string
+ * takes the counter and saves how many tasks left to do
+ */
+const setData = function () {
   let tasks = nodeListToArray(".sort");
   let tasksString = "";
-  let mainDiv = createElement("div");
   console.log(tasks);
   for (let item of tasks) {
-    tasksString += `${item.innerHTML}`;
+    let priority = item.classList[0];
+    tasksString += `<div class="sort ${priority}">${item.innerHTML}</div>`;
   }
   console.log(tasksString);
   localStorage.setItem("tasks", tasksString);
+  localStorage.setItem("counter", counterNum);
   console.log(localStorage.getItem("tasks"));
-}
+};
 
+/** Retrieves the last data the user saved
+ * @returns the last number counter was at
+ */
 function getData() {
   let tasks = localStorage.getItem("tasks");
+  let counterNum = localStorage.getItem("counter");
+  counter(counterNum);
   let printSec = document.querySelector("#view");
   printSec.innerHTML = tasks;
+  return counterNum;
 }
 
 let counterNum = 0;
+counterNum = getData();
 let sendButton = document.querySelector("#addButton");
 let sortButton = document.querySelector("#sortButton");
 let deleteButton = document.querySelector("#deleteButton");
+let saveButton = document.querySelector("#saveButton");
 sendButton.addEventListener("click", addNewTask);
 sortButton.addEventListener("click", sortItems);
 deleteButton.addEventListener("click", deleteTasks);
+saveButton.addEventListener("click", setData);
 document.addEventListener("click", taskDone);

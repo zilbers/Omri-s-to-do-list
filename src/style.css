@@ -57,12 +57,20 @@ input {
   margin: 5px 0;
   padding: 10px;
 }
+
 #deleteButton {
   margin: auto;
   float: right;
   width: 20%;
   height: 50%;
 }
+
+#saveButton {
+    margin: auto;
+    float: right;
+    width: 20%;
+    height: 50%;
+  }
 
 #prioritySelector {
   padding: 10px;
