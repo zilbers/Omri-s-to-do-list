@@ -64,7 +64,9 @@ const deleteTasks = function () {
   }
 };
 
-const openCloseNavbar = function (event) {
+/** Opens and closes the navbar
+ */
+const openCloseNavbar = function () {
   let navbar = document.querySelector("#navbarDiv");
   navbar.hidden = (navbar.hidden) ? false : true;
 };

@@ -178,27 +178,40 @@ button:hover {
 }
 
 .arrow {
-    position: fixed;
-    border: solid black;
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 3px;
-    cursor: pointer;
-  }
+  position: fixed;
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  float: left;
+}
 
-  .down {
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-  }
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
 
-  .up {
-    transform: rotate(-135deg);
-    -webkit-transform: rotate(-135deg);
-  }
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
 
-  .center {
-    margin: auto;
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+#closeNavbarArrow,
+#openNavbarArrow {
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 1000px) {
+  body {
+    height: 100vh;
     width: 50%;
+    margin: auto;
     padding: 10px;
   }
-  
+  }
