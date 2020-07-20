@@ -3,7 +3,7 @@ This project is Todo List Web Application.
 
 The app passed 6 tests that are included in this repository.
 
-The project you will let the user can store prioritized _todo tasks_ and view/sort that list, save the list to be able to use again and search for tasks.
+The project will let the user store prioritized _todo tasks_ and view/sort that list, save the list to be able to use again and search for tasks.
 
 
 Preview:
