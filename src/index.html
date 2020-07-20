@@ -5,9 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Omri's to-do list</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <!-- NAVBAR -->
+    <p id="openNavbarArrow"><i class="arrow down"></i></p>
+    <div id="navbarDiv" hidden="true">
+      <nav id="navbar">
+        <p id="closeNavbarArrow" class="center"><i class="arrow up"></i></p>
+        <a href="#welcome-section"
+          ><input type="text" id="navInput" placeholder="Task locator"
+        /></a>
+        <button id="searchButton" class="button">Search</button>
+      </nav>
+    </div>
+    <!-- Opening Sec -->
     <section id="opening" class="header">
       <div class="main">
         <h1>
@@ -18,9 +33,11 @@
         </p>
       </div>
     </section>
+    <!--Control Sec -->
     <section id="control">
+      <!-- Input Sec -->
       <div class="header">
-        <input type="text" id="textInput" placeholder="choose priority =>"/>
+        <input type="text" id="textInput" placeholder="choose priority =>" />
         <select name="prioritySelector" id="prioritySelector">
           <option value="1">1</option>
           <option value="2">2</option>
@@ -31,6 +48,7 @@
         <button id="addButton" class="button">Add</button>
         <button id="sortButton" class="button">Sort</button>
       </div>
+      <!-- Counter Sec -->
       <div class="counters">
         <span id="counter">0</span>
         <span>TODO's left!</span>
@@ -38,6 +56,7 @@
         <button id="saveButton" class="button">Save</button>
       </div>
     </section>
+    <!-- View Sec -->
     <section id="view"></section>
     <script src="main.js"></script>
   </body>

@@ -64,6 +64,11 @@ const deleteTasks = function () {
   }
 };
 
+const openCloseNavbar = function (event) {
+  let navbar = document.querySelector("#navbarDiv");
+  navbar.hidden = (navbar.hidden) ? false : true;
+};
+
 /** Transforms nodeList to an array
  * @param {*} itemName the item name to transform
  * @returns and array
@@ -151,8 +156,12 @@ let sendButton = document.querySelector("#addButton");
 let sortButton = document.querySelector("#sortButton");
 let deleteButton = document.querySelector("#deleteButton");
 let saveButton = document.querySelector("#saveButton");
+let openNavbarArrow = document.querySelector("#openNavbarArrow");
+let closeNavabarArrow = document.querySelector("#closeNavbarArrow");
 sendButton.addEventListener("click", addNewTask);
 sortButton.addEventListener("click", sortItems);
 deleteButton.addEventListener("click", deleteTasks);
 saveButton.addEventListener("click", setData);
+openNavbarArrow.addEventListener("click", openCloseNavbar);
+closeNavabarArrow.addEventListener("click", openCloseNavbar);
 document.addEventListener("click", taskDone);
