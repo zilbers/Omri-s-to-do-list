@@ -25,8 +25,7 @@ const addNewTask = function () {
  * @sortItemsArray {array} Array of the nodeList
  */
 const sortItems = function () {
-  let sortItems = document.querySelectorAll(".sort");
-  let sortItemsArray = Array.prototype.slice.call(sortItems);
+  let sortItemsArray = nodeListToArray(".sort");
   let viewList = document.querySelector("#view");
   viewList.innerHTML = "";
   sortItemsArray.sort((b, a) => a.classList.value[0] - b.classList.value[0]);
@@ -36,6 +35,9 @@ const sortItems = function () {
   console.log(sortItemsArray);
 };
 
+/** Strikes an item the users marks
+ * @param {*} event the event that calls the function
+ */
 const taskDone = function (event) {
   let itemToStrike = event.target.closest(".sort");
   if (!itemToStrike) return;
@@ -51,6 +53,25 @@ const taskDone = function (event) {
   return counterNum;
   console.log(itemToStrike.classList);
 };
+
+/** Deletes marked tasks
+ * @tasksDelete {nodeList} nodeList of all the marked tasks
+ */
+const deleteTasks = function () {
+  let tasksDelete = nodeListToArray(".strike");
+  for (let task of tasksDelete) {
+    task.remove();
+  }
+};
+
+/** Transforms nodeList to an array
+ * @param {*} itemName the item name to transform
+ * @returns and array
+ */
+function nodeListToArray(itemName) {
+  let nodeList = document.querySelectorAll(itemName);
+  return Array.prototype.slice.call(nodeList);
+}
 
 /** Prints item to view section
  * @viewList The view section
@@ -94,9 +115,30 @@ function counter(tasksLeft) {
   counterElem.innerHTML = tasksLeft;
 }
 
+function setData() {
+  let tasks = nodeListToArray(".sort");
+  let tasksString = "";
+  let mainDiv = createElement("div");
+  console.log(tasks);
+  for (let item of tasks) {
+    tasksString += `${item.innerHTML}`;
+  }
+  console.log(tasksString);
+  localStorage.setItem("tasks", tasksString);
+  console.log(localStorage.getItem("tasks"));
+}
+
+function getData() {
+  let tasks = localStorage.getItem("tasks");
+  let printSec = document.querySelector("#view");
+  printSec.innerHTML = tasks;
+}
+
 let counterNum = 0;
 let sendButton = document.querySelector("#addButton");
 let sortButton = document.querySelector("#sortButton");
+let deleteButton = document.querySelector("#deleteButton");
 sendButton.addEventListener("click", addNewTask);
 sortButton.addEventListener("click", sortItems);
+deleteButton.addEventListener("click", deleteTasks);
 document.addEventListener("click", taskDone);
