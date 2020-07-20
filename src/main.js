@@ -68,15 +68,16 @@ const deleteTasks = function () {
  */
 const openCloseNavbar = function () {
   let navbar = document.querySelector("#navbarDiv");
-  navbar.hidden = (navbar.hidden) ? false : true;
+  navbar.hidden = navbar.hidden ? false : true;
 };
 
 /** Searches for input in page
  */
 const searchInWindow = function () {
-    let searchValue = document.querySelector("#navInput").value;
-    window.find(searchValue);
-}
+  let searchValue = document.querySelector("#navInput");
+  window.find(searchValue.value);
+  searchValue.value = "";
+};
 
 /** Transforms nodeList to an array
  * @param {*} itemName the item name to transform
@@ -159,9 +160,14 @@ function getData() {
   return counterNum;
 }
 
-function myQueryAndEventListener(elem, eventType, eventFunc){
-    let item = document.querySelector(elem);
-    item.addEventListener(eventType, eventFunc);
+/** Finds and sets eventListener on an element
+ * @param {*} elem Target element
+ * @param {*} eventType The type of event to listen to
+ * @param {*} eventFunc The function to activate on event
+ */
+function myQueryAndEventListener(elem, eventType, eventFunc) {
+  let item = document.querySelector(elem);
+  item.addEventListener(eventType, eventFunc);
 }
 
 let counterNum = 0;
@@ -171,17 +177,6 @@ myQueryAndEventListener("#sortButton", "click", sortItems);
 myQueryAndEventListener("#deleteButton", "click", deleteTasks);
 myQueryAndEventListener("#saveButton", "click", setData);
 myQueryAndEventListener("#openNavbarArrow", "click", openCloseNavbar);
-myQueryAndEventListener("#closeNavbarArrow", "click", openCloseNavbar)
-// let sendButton = document.querySelector("#addButton");
-// let sortButton = document.querySelector("#sortButton");
-// let deleteButton = document.querySelector("#deleteButton");
-// let saveButton = document.querySelector("#saveButton");
-// let openNavbarArrow = document.querySelector("#openNavbarArrow");
-// let closeNavbarArrow = document.querySelector("#closeNavbarArrow");
-// sendButton.addEventListener("click", addNewTask);
-// sortButton.addEventListener("click", sortItems);
-// deleteButton.addEventListener("click", deleteTasks);
-// saveButton.addEventListener("click", setData);
-// openNavbarArrow.addEventListener("click", openCloseNavbar);
-// closeNavbarArrow.addEventListener("click", openCloseNavbar);
+myQueryAndEventListener("#closeNavbarArrow", "click", openCloseNavbar);
+myQueryAndEventListener("#searchButton", "click", searchInWindow);
 document.addEventListener("click", taskDone);
