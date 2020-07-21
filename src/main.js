@@ -91,7 +91,7 @@ const changePriority = function (event) {
   selectPriority.type = "number";
   selectPriority.min = 1;
   selectPriority.max = 5;
-  selectPriority.value = 1;
+  selectPriority.value = element.innerHTML;
   selectPriority.classList = "priorityInput";
   element.innerHTML = "";
   element.appendChild(selectPriority);
@@ -111,6 +111,7 @@ const printNewPriority = function (event) {
   grandParent.className = `${value} sort`;
   console.log(grandParent.classList);
   element.removeEventListener("keypress", printNewPriority);
+  document.addEventListener("click", taskDone);
 };
 
 const openHelp = function () {
