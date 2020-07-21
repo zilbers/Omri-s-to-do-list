@@ -100,17 +100,22 @@ const changePriority = function (event) {
 };
 
 /** Prints the new value for priority
- * @param {*} event 
+ * @param {*} event
  */
 const printNewPriority = function (event) {
   if (event.key !== "Enter") return;
-    let element = event.target;
-    let grandParent = element.parentElement.parentElement;
-    let value = element.value;
-    element.parentElement.innerHTML = value;
-    grandParent.className = `${value} sort`;
-    console.log(grandParent.classList);
-    element.removeEventListener("keypress", printNewPriority);
+  let element = event.target;
+  let grandParent = element.parentElement.parentElement;
+  let value = element.value;
+  element.parentElement.innerHTML = value;
+  grandParent.className = `${value} sort`;
+  console.log(grandParent.classList);
+  element.removeEventListener("keypress", printNewPriority);
+};
+
+const openHelp = function () {
+  let help = document.querySelector("#help");
+  help.hidden = help.hidden ? false : true;
 };
 
 /** Transforms nodeList to an array
@@ -213,5 +218,6 @@ myQueryAndEventListener("#saveButton", "click", setData);
 myQueryAndEventListener("#openNavbarArrow", "click", openCloseNavbar);
 myQueryAndEventListener("#closeNavbarArrow", "click", openCloseNavbar);
 myQueryAndEventListener("#searchButton", "click", searchInWindow);
+myQueryAndEventListener("#helpButton", "click", openHelp);
 document.addEventListener("mouseover", changePriority);
 document.addEventListener("click", taskDone);

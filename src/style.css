@@ -47,12 +47,21 @@ input {
   padding: 10px;
   width: 15%;
   background: rgba(0, 29, 70, 0.658);
-  float: left;
   text-align: center;
   font-size: 16px;
   cursor: pointer;
   transition: 0.3s;
   border: solid;
+}
+
+#helpButton {
+  width: 100px;
+  background: rgba(7, 64, 143, 0.658);
+  margin-top: 50px;
+}
+
+#helpButton:hover {
+  background: rgba(255, 255, 255, 0.7);
 }
 
 #sortButton {
@@ -76,16 +85,16 @@ input {
 }
 
 .priorityInput {
-    background: rgba(0, 29, 70, 0.658);
-    transition: 0.3s;
-    cursor: pointer;
-    border: solid;
-    text-align: center;
-    float: right;
-    height: 30px;
-    width: 50px;
-    margin: auto;
-    padding: 10px;
+  background: rgba(0, 29, 70, 0.658);
+  transition: 0.3s;
+  cursor: pointer;
+  border: solid;
+  text-align: center;
+  float: right;
+  height: 30px;
+  width: 50px;
+  margin: auto;
+  padding: 10px;
 }
 
 select {
@@ -229,8 +238,8 @@ button:hover {
 }
 
 #openNavbarArrow {
-    text-align: center;
-    position: fixed;
+  text-align: center;
+  position: fixed;
 }
 
 #closeNavbarArrow,
@@ -239,10 +248,11 @@ button:hover {
 }
 
 #help {
-    font-size: 0.75em;
-    background-color: rgba(255, 255, 255, 0.8);
-    color: rgb(0, 0, 0);
-    padding: 30px;
+  font-size: 0.9em;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: rgb(0, 0, 0);
+  padding: 30px;
+  text-align: left;
 }
 
 @media only screen and (min-width: 1000px) {
