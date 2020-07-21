@@ -79,19 +79,38 @@ const searchInWindow = function () {
   searchValue.value = "";
 };
 
+/** Creates select element to change priority
+ * @param {*} event the elem that sets the event
+ */
 const changePriority = function (event) {
-    console.log(event.target.classList[0]);
-  if (event.target.classList[0] != "todoPriority") return;
-  let selectPriority = document.createElement("select");
-  for (let i = 1; i < 6; i++) {
-    let option = document.createElement("option");
-    option.value = i;
-    option.innerHTML = i;
-    selectPriority.appendChild(option);
-  }
-  console.log(selectPriority);
-  event.target.innerHTML = "";
-  event.target.appendChild(selectPriority);
+  let element = event.target;
+  if (element.classList[0] != "todoPriority") return;
+  console.log(element);
+  document.removeEventListener("click", taskDone);
+  let selectPriority = document.createElement("input");
+  selectPriority.type = "number";
+  selectPriority.min = 1;
+  selectPriority.max = 5;
+  selectPriority.value = 1;
+  selectPriority.classList = "priorityInput";
+  element.innerHTML = "";
+  element.appendChild(selectPriority);
+  selectPriority.addEventListener("keypress", printNewPriority);
+  console.log(element.parentElement);
+};
+
+/** Prints the new value for priority
+ * @param {*} event 
+ */
+const printNewPriority = function (event) {
+  if (event.key !== "Enter") return;
+    let element = event.target;
+    let grandParent = element.parentElement.parentElement;
+    let value = element.value;
+    element.parentElement.innerHTML = value;
+    grandParent.className = `${value} sort`;
+    console.log(grandParent.classList);
+    element.removeEventListener("keypress", printNewPriority);
 };
 
 /** Transforms nodeList to an array
@@ -194,5 +213,5 @@ myQueryAndEventListener("#saveButton", "click", setData);
 myQueryAndEventListener("#openNavbarArrow", "click", openCloseNavbar);
 myQueryAndEventListener("#closeNavbarArrow", "click", openCloseNavbar);
 myQueryAndEventListener("#searchButton", "click", searchInWindow);
-document.addEventListener("mouseover", changePriority)
+document.addEventListener("mouseover", changePriority);
 document.addEventListener("click", taskDone);
