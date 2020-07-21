@@ -41,6 +41,7 @@ $ npm run test
 - Drop down search bar.
 - Delete mechanism.
 - TODO list is consistent, saved on local storage.
+- Able to change priority by hovering over current priority. Enter to set new value.
 - The app is responsive, and has media query to fit certain displays better.
 - Deployed to the internet! https://classy-todo-list-git-onwork.zilbers.vercel.app/
 
