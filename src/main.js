@@ -79,6 +79,21 @@ const searchInWindow = function () {
   searchValue.value = "";
 };
 
+const changePriority = function (event) {
+    console.log(event.target.classList[0]);
+  if (event.target.classList[0] != "todoPriority") return;
+  let selectPriority = document.createElement("select");
+  for (let i = 1; i < 6; i++) {
+    let option = document.createElement("option");
+    option.value = i;
+    option.innerHTML = i;
+    selectPriority.appendChild(option);
+  }
+  console.log(selectPriority);
+  event.target.innerHTML = "";
+  event.target.appendChild(selectPriority);
+};
+
 /** Transforms nodeList to an array
  * @param {*} itemName the item name to transform
  * @returns and array
@@ -179,4 +194,5 @@ myQueryAndEventListener("#saveButton", "click", setData);
 myQueryAndEventListener("#openNavbarArrow", "click", openCloseNavbar);
 myQueryAndEventListener("#closeNavbarArrow", "click", openCloseNavbar);
 myQueryAndEventListener("#searchButton", "click", searchInWindow);
+document.addEventListener("mouseover", changePriority)
 document.addEventListener("click", taskDone);
