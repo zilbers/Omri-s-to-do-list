@@ -43,7 +43,7 @@ $ npm run test
 - TODO list is consistent, saved on local storage.
 - Able to change priority by hovering over current priority. Enter to set new value.
 - The app is responsive, and has media query to fit certain displays better.
-- Help button to guide the user.
+- Help button to guide the user. 
 - Deployed to the internet! https://classy-todo-list-git-onwork.zilbers.vercel.app/
 
 
