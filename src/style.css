@@ -1,0 +1,265 @@
+* {
+  box-sizing: border-box;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+*:focus {
+  outline: none;
+}
+
+body {
+  background: rgb(147, 189, 255);
+  font-size: 1.25em;
+}
+
+.strike {
+  background: rgba(0, 0, 0, 0.7);
+  text-decoration: line-through;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+.header {
+  padding: 30px 40px;
+  color: white;
+  text-align: center;
+  font-size: 1.1em;
+}
+
+.header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+input {
+  margin: 0;
+  border: solid;
+  width: 75%;
+  padding: 10px;
+  float: left;
+  font-size: 16px;
+}
+
+.button {
+  padding: 10px;
+  width: 15%;
+  background: rgba(0, 29, 70, 0.658);
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border: solid;
+}
+
+#helpButton {
+  width: 100px;
+  background: rgba(7, 64, 143, 0.658);
+  margin-top: 50px;
+}
+
+#helpButton:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+#sortButton {
+  float: right;
+  margin: 5px 0;
+  padding: 10px;
+}
+
+#deleteButton {
+  margin: auto;
+  float: right;
+  width: 20%;
+  height: 50%;
+}
+
+#saveButton {
+  margin: auto;
+  float: right;
+  width: 20%;
+  height: 50%;
+}
+
+.priorityInput {
+  background: rgba(0, 29, 70, 0.658);
+  transition: 0.3s;
+  cursor: pointer;
+  border: solid;
+  text-align: center;
+  float: right;
+  height: 30px;
+  width: 50px;
+  margin: auto;
+  padding: 10px;
+}
+
+select {
+  background: rgba(0, 29, 70, 0.658);
+  transition: 0.3s;
+  cursor: pointer;
+  border: solid;
+  text-align: center;
+}
+
+#prioritySelector {
+  padding: 9px;
+  width: 10%;
+  float: left;
+  font-size: 16px;
+}
+
+#prioritySelector:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+button:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.main {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 2rem 5rem 2rem 5rem;
+}
+
+.rail {
+  display: inline;
+  cursor: pointer;
+}
+
+.todoText {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+.todoCreatedAt {
+  float: left;
+}
+
+.todoPriority {
+  float: right;
+}
+
+.counters {
+  margin: auto;
+  width: 5%;
+  padding: 20px;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.sort {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border: solid;
+  padding: 5px;
+}
+
+.sort:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+::-webkit-input-placeholder {
+  text-align: right;
+}
+
+#navbar {
+  background-color: rgb(49, 53, 59);
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+#navbar a {
+  text-decoration: none;
+  padding: 1rem;
+  color: var(--main-white);
+}
+
+#searchButton {
+  width: 10%;
+  height: 50%;
+  margin: 15px 50px 0 0;
+  padding: 10px;
+}
+
+#navbar input {
+  margin: 0;
+  border-radius: 5%;
+  border: solid;
+  width: 272%;
+  padding: 10px;
+  float: right;
+  font-size: 16px;
+}
+
+#navbar ::-webkit-input-placeholder {
+  text-align: left;
+}
+
+.arrow {
+  position: fixed;
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+.arrow:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.down {
+  position: relative;
+  right: 25%;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+#openNavbarArrow {
+  text-align: center;
+  position: fixed;
+}
+
+#closeNavbarArrow,
+#openNavbarArrow {
+  cursor: pointer;
+}
+
+#help {
+  font-size: 0.9em;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: rgb(0, 0, 0);
+  padding: 30px;
+  text-align: left;
+}
+
+@media only screen and (min-width: 1000px) {
+  body {
+    height: 100vh;
+    width: 50%;
+    margin: auto;
+    padding: 10px;
+  }
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Omri's to-do list</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel='icon'
+    href='https://img.favpng.com/21/21/14/computer-icons-royalty-free-clip-art-png-favpng-tJrUW2TtD8vR3HeBAgCDdLpPz.jpg'
+    type='image/x-icon'/ >
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <p id="openNavbarArrow"><i class="arrow down">Nav</i></p>
+    <div id="navbarDiv" hidden="true">
+      <nav id="navbar">
+        <p id="closeNavbarArrow" class="center"><i class="arrow up"></i></p>
+        <a href="#welcome-section"
+          ><input type="text" id="navInput" placeholder="Task locator"
+        /></a>
+        <button id="searchButton" class="button">Search</button>
+      </nav>
+    </div>
+    <!-- Opening Sec -->
+    <section id="opening" class="header">
+      <div class="main">
+        <h1>
+          The perfect to-do list
+        </h1>
+        <p>
+          Organize your day with this simple yet effective to-do list!<br>
+          <button id="helpButton" class="button">Help</button>
+          <ul id="help" hidden="true">
+            <li>Add a new task by entering a task to the input bar bellow, choosing priority and then pressing add.</li>
+            <li>Sort the tasks by priority by pressing the sort button.</li>
+            <li>You can edit priority value by hovering over it and then pressing the Enter key.</li>
+            <li>Save your tasks by pressing the save button.</li>
+            <li>You can delete marked tasks by pressing the delete button.</li>
+        </ul>
+        </p>
+      </div>
+    </section>
+    <!--Control Sec -->
+    <section id="control">
+      <!-- Input Sec -->
+      <div class="header">
+        <input type="text" id="textInput" placeholder="Set priority =>" />
+        <select name="prioritySelector" id="prioritySelector">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <button id="addButton" class="button">Add</button>
+        <button id="sortButton" class="button">Sort</button>
+      </div>
+      <!-- Counter Sec -->
+      <div class="counters">
+        <span id="counter">0</span>
+        <span>TODO's left!</span>
+        <button id="deleteButton" class="button">Delete</button>
+        <button id="saveButton" class="button">Save</button>
+      </div>
+    </section>
+    <!-- View Sec -->
+    <section id="view"></section>
+    <script src="main.js"></script>
+  </body>
+</html>
